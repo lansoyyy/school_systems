@@ -37,7 +37,7 @@ class TextFieldWidget extends StatefulWidget {
       this.height = 50,
       this.maxLine = 1,
       this.hintColor = Colors.white,
-      this.borderColor = Colors.grey,
+      this.borderColor = const Color(0xff1A1851),
       this.showEye = false,
       this.color = Colors.white,
       this.radius = 5,
@@ -64,10 +64,10 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
             children: [
               TextSpan(
                 text: widget.label,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 14,
                   fontFamily: 'Bold',
-                  color: Colors.black,
+                  color: primary,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -101,10 +101,10 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
           height: widget.height,
           child: TextFormField(
             enabled: widget.isEnabled,
-            style: const TextStyle(
+            style: TextStyle(
               fontFamily: 'Regular',
               fontSize: 14,
-              color: Colors.black,
+              color: primary,
             ),
             textCapitalization: widget.textCapitalization!,
             keyboardType: widget.inputType,
@@ -114,7 +114,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                 color: primary,
               ),
               filled: true,
-              fillColor: Colors.white,
+              fillColor: grey.withOpacity(0.2),
               suffixIcon: widget.showEye! == true
                   ? IconButton(
                       onPressed: () {
@@ -137,7 +137,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                 fontStyle: widget.fontStyle!,
                 fontFamily: 'Regular',
                 fontSize: 14,
-                color: Colors.grey,
+                color: primary,
               ),
               hintText: widget.hint,
               border: InputBorder.none,
@@ -145,35 +145,35 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                 borderSide: BorderSide(
                   color: widget.borderColor!,
                 ),
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(widget.radius!),
               ),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: widget.borderColor!,
                 ),
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(widget.radius!),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: widget.borderColor!,
                 ),
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(widget.radius!),
               ),
               errorBorder: OutlineInputBorder(
                 borderSide: const BorderSide(
                   color: Colors.red,
                 ),
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(widget.radius!),
               ),
               errorText: widget.errorText,
               errorStyle: TextStyle(
                   fontFamily: 'Bold',
-                  fontSize: widget.showErrorMsg! ? 12 : 0.1),
+                  fontSize: widget.showErrorMsg! ? widget.radius! : 0.1),
               focusedErrorBorder: OutlineInputBorder(
                 borderSide: const BorderSide(
                   color: Colors.red,
                 ),
-                borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(widget.radius!),
               ),
             ),
 

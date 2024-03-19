@@ -17,6 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   bool isstudent = true;
   bool isteacher = false;
+  bool remembered = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: 200,
               ),
               const SizedBox(
-                height: 30,
+                height: 50,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -122,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               const SizedBox(
-                height: 50,
+                height: 10,
               ),
               TextFieldWidget(
                 prefixIcon: Icons.person,
@@ -144,18 +145,39 @@ class _LoginScreenState extends State<LoginScreen> {
                     label: 'Password',
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 40),
-                    child: Align(
-                      alignment: Alignment.bottomRight,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: TextWidget(
-                          text: 'Forgot Password?',
-                          fontSize: 12,
-                          color: primary,
-                          fontFamily: 'Bold',
+                    padding: const EdgeInsets.only(right: 40, left: 40),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Checkbox(
+                              activeColor: primary,
+                              value: remembered,
+                              onChanged: (value) {
+                                setState(() {
+                                  remembered = value!;
+                                });
+                              },
+                            ),
+                            TextWidget(
+                              text: 'Remember Me',
+                              fontSize: 12,
+                              color: primary,
+                              fontFamily: 'Bold',
+                            ),
+                          ],
                         ),
-                      ),
+                        TextButton(
+                          onPressed: () {},
+                          child: TextWidget(
+                            text: 'Forgot Password?',
+                            fontSize: 12,
+                            color: primary,
+                            fontFamily: 'Bold',
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -164,6 +186,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 20,
               ),
               ButtonWidget(
+                width: 275,
                 label: 'Login',
                 onPressed: () {},
               ),
