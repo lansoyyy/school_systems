@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 80,
+                height: 50,
               ),
               Image.asset(
                 'assets/images/logo.png',
@@ -183,7 +183,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               ButtonWidget(
                 width: 275,
