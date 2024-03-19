@@ -33,7 +33,7 @@ class TextFieldWidget extends StatefulWidget {
       this.prefixIcon,
       required this.controller,
       this.isObscure = false,
-      this.width = 325,
+      this.width = 275,
       this.height = 50,
       this.maxLine = 1,
       this.hintColor = Colors.white,
