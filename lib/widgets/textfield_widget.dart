@@ -73,7 +73,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
               ),
               widget.isRequred!
                   ? const TextSpan(
-                      text: '*',
+                      text: ' *',
                       style: TextStyle(
                         fontSize: 14,
                         fontFamily: 'Bold',
@@ -109,6 +109,10 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
             textCapitalization: widget.textCapitalization!,
             keyboardType: widget.inputType,
             decoration: InputDecoration(
+              prefixIcon: Icon(
+                widget.prefixIcon,
+                color: primary,
+              ),
               filled: true,
               fillColor: Colors.white,
               suffixIcon: widget.showEye! == true
