@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_systems/screens/home_screen.dart';
 import 'package:school_systems/utlis/colors.dart';
 import 'package:school_systems/widgets/button_widget.dart';
 import 'package:school_systems/widgets/text_widget.dart';
@@ -188,7 +189,10 @@ class _LoginScreenState extends State<LoginScreen> {
               ButtonWidget(
                 width: 275,
                 label: 'Login',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                },
               ),
             ],
           ),
