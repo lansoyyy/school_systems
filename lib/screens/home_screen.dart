@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const SizedBox(),
     const SizedBox(),
     const SizedBox(),
+    const SizedBox(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,14 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: const Icon(Icons.home),
             title: const Text(
               "Home",
+              style: TextStyle(fontFamily: 'Bold'),
+            ),
+            selectedColor: Colors.white,
+          ),
+          SalomonBottomBarItem(
+            icon: const Icon(Icons.newspaper_outlined),
+            title: const Text(
+              "Feed",
               style: TextStyle(fontFamily: 'Bold'),
             ),
             selectedColor: Colors.white,
