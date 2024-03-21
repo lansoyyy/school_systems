@@ -8,10 +8,14 @@ class TextWidget extends StatelessWidget {
   late TextDecoration? decoration;
   final bool? isItalize;
   final bool? isBold;
+  final int? maxLines;
+  final TextAlign align;
 
   TextWidget(
       {super.key,
       this.decoration,
+      this.align = TextAlign.center,
+      this.maxLines = 1,
       this.isItalize = false,
       this.isBold = false,
       required this.text,
@@ -23,8 +27,8 @@ class TextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      textAlign: TextAlign.center,
-      maxLines: 1,
+      textAlign: align,
+      maxLines: maxLines,
       style: TextStyle(
           overflow: TextOverflow.ellipsis,
           fontStyle: isItalize! ? FontStyle.italic : null,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:school_systems/screens/tabs/course_tab.dart';
 import 'package:school_systems/screens/tabs/home_tab.dart';
 import 'package:school_systems/utlis/colors.dart';
 
@@ -16,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List tabs = [
     const HomeTab(),
     const SizedBox(),
-    const SizedBox(),
+    const CourseTab(),
     const SizedBox(),
     const SizedBox(),
   ];
