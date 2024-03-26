@@ -89,77 +89,81 @@ class _CourseTabState extends State<CourseTab> {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 10),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const CourseInfoTab()));
-                    },
-                    child: Card(
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
+                  child: Card(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      height: 210,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: grey, width: 1.5),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Container(
-                        width: double.infinity,
-                        height: 210,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: grey, width: 1.5),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      TextWidget(
-                                        text: 'Mathematics 111',
-                                        fontSize: 20,
-                                        fontFamily: 'Bold',
-                                        color: primary,
-                                      ),
-                                      TextWidget(
-                                        text: 'CPE4A',
-                                        fontSize: 18,
-                                        fontFamily: 'Bold',
-                                        color: primary,
-                                      ),
-                                    ],
-                                  ),
-                                  IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.more_vert,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    TextWidget(
+                                      text: 'Mathematics 111',
+                                      fontSize: 20,
+                                      fontFamily: 'Bold',
                                       color: primary,
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 150),
-                                child: Center(
-                                  child: Image.asset(
-                                    'assets/images/studying.png',
-                                    width: 100,
-                                  ),
+                                    TextWidget(
+                                      text: 'CPE4A',
+                                      fontSize: 18,
+                                      fontFamily: 'Bold',
+                                      color: primary,
+                                    ),
+                                  ],
+                                ),
+                                PopupMenuButton(
+                                  itemBuilder: (context) {
+                                    return [
+                                      PopupMenuItem(
+                                        onTap: () {
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const CourseInfoTab()));
+                                        },
+                                        child: TextWidget(
+                                          text: 'View Course',
+                                          fontSize: 14,
+                                          fontFamily: 'Bold',
+                                        ),
+                                      ),
+                                    ];
+                                  },
+                                )
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 150),
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/studying.png',
+                                  width: 100,
                                 ),
                               ),
-                              TextWidget(
-                                text: 'John Doe',
-                                fontSize: 14,
-                                fontFamily: 'Bold',
-                                color: primary,
-                              ),
-                            ],
-                          ),
+                            ),
+                            TextWidget(
+                              text: 'John Doe',
+                              fontSize: 14,
+                              fontFamily: 'Bold',
+                              color: primary,
+                            ),
+                          ],
                         ),
                       ),
                     ),
