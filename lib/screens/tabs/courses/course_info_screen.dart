@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_calendar_week/flutter_calendar_week.dart';
+import 'package:school_systems/screens/tabs/courses/view_info_screen.dart';
 import 'package:school_systems/utlis/colors.dart';
 import 'package:school_systems/widgets/text_widget.dart';
 
@@ -85,9 +86,6 @@ class _CourseInfoTabState extends State<CourseInfoTab> {
                               color: primary,
                             ),
                             const Expanded(child: SizedBox()),
-                            GestureDetector(
-                              child: const Icon(Icons.more_vert),
-                            ),
                           ],
                         ),
                         const SizedBox(
@@ -130,13 +128,13 @@ class _CourseInfoTabState extends State<CourseInfoTab> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(15.0),
+                              padding: const EdgeInsets.all(10.0),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Container(
-                                    width: 40,
+                                    width: 35,
                                     height: 40,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
@@ -148,18 +146,34 @@ class _CourseInfoTabState extends State<CourseInfoTab> {
                                     ),
                                   ),
                                   const SizedBox(
-                                    width: 10,
+                                    width: 5,
                                   ),
                                   TextWidget(
-                                    text: 'New Material: Algebra Chapter 3',
+                                    text: 'New Assignment: Algebra Chapter 3',
                                     fontSize: 14,
                                     fontFamily: 'Bold',
                                     color: primary,
                                   ),
                                   const Expanded(child: SizedBox()),
-                                  GestureDetector(
-                                    child: const Icon(Icons.more_vert),
-                                  ),
+                                  PopupMenuButton(
+                                    itemBuilder: (context) {
+                                      return [
+                                        PopupMenuItem(
+                                          onTap: () {
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const ViewInfoTab()));
+                                          },
+                                          child: TextWidget(
+                                            text: 'View',
+                                            fontSize: 14,
+                                            fontFamily: 'Bold',
+                                          ),
+                                        ),
+                                      ];
+                                    },
+                                  )
                                 ],
                               ),
                             ),
