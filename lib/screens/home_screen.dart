@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neat_and_clean_calendar/flutter_neat_and_clean_calendar.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:school_systems/screens/tabs/calendar_tab.dart';
+import 'package:school_systems/screens/tabs/chat_tab.dart';
 import 'package:school_systems/screens/tabs/course_tab.dart';
 import 'package:school_systems/screens/tabs/home_tab.dart';
 import 'package:school_systems/utlis/colors.dart';
@@ -21,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const SizedBox(),
     const CourseTab(),
     const CalendarTab(),
-    const SizedBox(),
+    const ChatTab(),
   ];
   @override
   Widget build(BuildContext context) {
