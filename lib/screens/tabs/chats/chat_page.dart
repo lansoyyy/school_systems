@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:school_systems/models/chat_model.dart';
+import 'package:school_systems/screens/tabs/chats/chat_info_page.dart';
 import 'package:school_systems/utlis/colors.dart';
 import 'package:school_systems/widgets/text_widget.dart';
 import 'package:school_systems/widgets/textfield_widget.dart';
@@ -108,7 +109,10 @@ class _ChatPageState extends State<ChatPage> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const ChatInfoPage()));
+                      },
                       icon: Icon(
                         Icons.info_outline,
                         color: primary,
