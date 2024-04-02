@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_calendar_week/flutter_calendar_week.dart';
+import 'package:school_systems/screens/profile_screen.dart';
 import 'package:school_systems/utlis/colors.dart';
 import 'package:school_systems/widgets/text_widget.dart';
 
@@ -39,11 +41,17 @@ class HomeTab extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const CircleAvatar(
-                    minRadius: 30,
-                    maxRadius: 30,
-                    backgroundImage: AssetImage(
-                      'assets/images/profile.png',
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const ProfileScreen()));
+                    },
+                    child: const CircleAvatar(
+                      minRadius: 30,
+                      maxRadius: 30,
+                      backgroundImage: AssetImage(
+                        'assets/images/profile.png',
+                      ),
                     ),
                   ),
                 ],
