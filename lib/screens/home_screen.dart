@@ -35,7 +35,10 @@ class _HomeScreenState extends State<HomeScreen> {
         items: [
           /// Home
           SalomonBottomBarItem(
-            icon: const Icon(Icons.home),
+            icon: Icon(
+              Icons.home,
+              color: _currentIndex == 0 ? Colors.white : primary,
+            ),
             title: const Text(
               "Home",
               style: TextStyle(fontFamily: 'Bold'),

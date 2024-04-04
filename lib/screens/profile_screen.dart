@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:school_systems/utlis/colors.dart';
 import 'package:school_systems/widgets/button_widget.dart';
 import 'package:school_systems/widgets/text_widget.dart';
@@ -8,141 +9,239 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(
-                      Icons.arrow_back_ios_new_rounded,
-                      color: primary,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 50,
-                  ),
-                  const SizedBox(
-                    width: 50,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Card(
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                    child: IconButton(
-                      onPressed: () {},
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       icon: Icon(
+                        Icons.arrow_back_ios_new_rounded,
                         color: primary,
-                        Icons.edit_square,
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  const CircleAvatar(
-                    minRadius: 45,
-                    maxRadius: 45,
-                    backgroundImage: AssetImage(
-                      'assets/images/profile.png',
+                    const SizedBox(
+                      width: 50,
                     ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  Card(
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(100),
+                    const SizedBox(
+                      width: 50,
                     ),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        color: primary,
-                        Icons.settings,
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Card(
+                      elevation: 3,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          color: primary,
+                          Icons.edit_square,
+                        ),
                       ),
                     ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    const CircleAvatar(
+                      minRadius: 45,
+                      maxRadius: 45,
+                      backgroundImage: AssetImage(
+                        'assets/images/profile.png',
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Card(
+                      elevation: 3,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          color: primary,
+                          Icons.settings,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Center(
+                  child: TextWidget(
+                    text: 'Lance Olana',
+                    fontSize: 24,
+                    fontFamily: 'Bold',
+                    color: primary,
                   ),
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Center(
-                child: TextWidget(
-                  text: 'Lance Olana',
-                  fontSize: 24,
+                ),
+                Center(
+                  child: TextWidget(
+                    text: 'BS in Computer Engineering',
+                    fontSize: 12,
+                    fontFamily: 'Medium',
+                    color: grey,
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ButtonWidget(
+                      height: 35,
+                      width: 150,
+                      color: secondary,
+                      fontSize: 14,
+                      label: 'View Grades',
+                      onPressed: () {},
+                    ),
+                    ButtonWidget(
+                      height: 35,
+                      width: 150,
+                      color: secondary,
+                      fontSize: 14,
+                      label: 'Student QR Code',
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+                Divider(
+                  color: primary,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                TextWidget(
+                  text: 'Student Information',
+                  fontSize: 18,
                   fontFamily: 'Bold',
                   color: primary,
                 ),
-              ),
-              Center(
-                child: TextWidget(
-                  text: 'BS in Computer Engineering',
-                  fontSize: 12,
-                  fontFamily: 'Medium',
-                  color: grey,
+                const SizedBox(
+                  height: 5,
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ButtonWidget(
-                    height: 35,
-                    width: 150,
-                    color: secondary,
-                    fontSize: 14,
-                    label: 'View Grades',
-                    onPressed: () {},
-                  ),
-                  ButtonWidget(
-                    height: 35,
-                    width: 150,
-                    color: secondary,
-                    fontSize: 14,
-                    label: 'Student QR Code',
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-              Divider(
-                color: primary,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              TextWidget(
-                text: 'Student Information',
-                fontSize: 18,
-                fontFamily: 'Bold',
-                color: primary,
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              tile('ID Number', '2020123456789'),
-              tile('Year Level', '3rd Year'),
-            ],
+                tile('ID Number', '2020123456789'),
+                tile('Year Level', '3rd Year'),
+                const SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  height: 40,
+                  child: TabBar(
+                      indicatorWeight: 2,
+                      indicatorSize: TabBarIndicatorSize.tab,
+                      dividerColor: Colors.transparent,
+                      indicatorColor: secondary,
+                      labelColor: primary,
+                      indicatorPadding:
+                          const EdgeInsets.only(left: 20, right: 20),
+                      unselectedLabelColor: Colors.grey,
+                      tabs: const [
+                        Tab(
+                          text: 'Personal Information',
+                        ),
+                        Tab(
+                          text: 'Background',
+                        ),
+                      ]),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Expanded(
+                  child: TabBarView(children: [
+                    personal(),
+                    background(),
+                  ]),
+                ),
+              ],
+            ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget personal() {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          tile('Email', 'lance.olana@gmail.com'),
+          tile('Contact Number', '09090104355'),
+          tile('Date of Birth', 'November 01, 2001'),
+          tile('Gender', 'Male'),
+          tile('Height', '170 cm'),
+          tile('Weight', '66 kg'),
+          tile('Bloodtype', 'O+'),
+          const SizedBox(
+            height: 10,
+          ),
+          TextWidget(
+            text: 'Emergency Contact Person',
+            fontSize: 18,
+            fontFamily: 'Bold',
+            color: primary,
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          tile('Contact Person', 'Mariza Olana'),
+          tile('Address', 'Zone 3, Poblacion, Impasugong, Bukidnon'),
+          tile('Contact Number', '09090104355'),
+          const SizedBox(
+            height: 10,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget background() {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          tile('Address', 'Zone 3, Poblacion, Impasugong, Bukidnon'),
+          tile('Place of Birth', 'Zone 3, Poblacion, Impasugong, Bukidnon'),
+          tile('Nationality', 'Filipino'),
+          tile('Religion', 'Roman Catholic'),
+          const SizedBox(
+            height: 10,
+          ),
+          tile("Mother's Name", 'Mariza Olana'),
+          tile('Address', 'Zone 3, Poblacion, Impasugong, Bukidnon'),
+          tile('Contact Number', '09090104355'),
+          const SizedBox(
+            height: 10,
+          ),
+          tile("Father's Name", 'Elmer Olana'),
+          tile('Address', 'Zone 3, Poblacion, Impasugong, Bukidnon'),
+          tile('Contact Number', '09090104355'),
+        ],
       ),
     );
   }
@@ -170,7 +269,7 @@ class ProfileScreen extends StatelessWidget {
             child: Center(
               child: TextWidget(
                 text: title,
-                fontSize: 14,
+                fontSize: 12,
                 color: Colors.white,
                 fontFamily: 'Bold',
               ),
