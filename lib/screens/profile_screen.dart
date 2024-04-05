@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:school_systems/screens/profile_pages/qr_page.dart';
 import 'package:school_systems/utlis/colors.dart';
 import 'package:school_systems/widgets/button_widget.dart';
 import 'package:school_systems/widgets/text_widget.dart';
@@ -122,7 +123,10 @@ class ProfileScreen extends StatelessWidget {
                       color: secondary,
                       fontSize: 14,
                       label: 'Student QR Code',
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const QRPage()));
+                      },
                     ),
                   ],
                 ),
