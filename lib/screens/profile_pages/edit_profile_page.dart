@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:school_systems/screens/profile_pages/edit_profile_page.dart';
 import 'package:school_systems/screens/profile_pages/qr_page.dart';
 import 'package:school_systems/utlis/colors.dart';
 import 'package:school_systems/widgets/button_widget.dart';
 import 'package:school_systems/widgets/text_widget.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class EditProfileScreen extends StatelessWidget {
+  const EditProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,18 +31,12 @@ class ProfileScreen extends StatelessWidget {
                         color: primary,
                       ),
                     ),
-                    const SizedBox(
-                      width: 50,
+                    TextWidget(
+                      text: 'Edit Profile',
+                      fontSize: 24,
+                      fontFamily: 'Bold',
+                      color: primary,
                     ),
-                    const SizedBox(
-                      width: 50,
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
                     Card(
                       elevation: 3,
                       shape: RoundedRectangleBorder(
@@ -51,39 +44,28 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       child: IconButton(
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => const EditProfileScreen()));
+                          Navigator.of(context).pop();
                         },
                         icon: Icon(
                           color: primary,
-                          Icons.edit_square,
+                          Icons.save,
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    const CircleAvatar(
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
                       minRadius: 45,
                       maxRadius: 45,
                       backgroundImage: AssetImage(
                         'assets/images/profile.png',
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Card(
-                      elevation: 3,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          color: primary,
-                          Icons.settings,
-                        ),
                       ),
                     ),
                   ],
@@ -106,33 +88,6 @@ class ProfileScreen extends StatelessWidget {
                     fontFamily: 'Medium',
                     color: grey,
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ButtonWidget(
-                      height: 35,
-                      width: 150,
-                      color: secondary,
-                      fontSize: 14,
-                      label: 'View Grades',
-                      onPressed: () {},
-                    ),
-                    ButtonWidget(
-                      height: 35,
-                      width: 150,
-                      color: secondary,
-                      fontSize: 14,
-                      label: 'Student QR Code',
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const QRPage()));
-                      },
-                    ),
-                  ],
                 ),
                 Divider(
                   color: primary,
